@@ -1,7 +1,7 @@
 # configured aws provider with proper credentials
 provider "aws" {
-  region     = "us-west-2"
-  profile = "jesmmet_profile" 
+  region     = "us-east-1"
+  profile = "omowunmi" 
 }
 
 # create default vpc if one does not exit
@@ -105,7 +105,7 @@ resource "aws_instance" "ec2_instance" {
   instance_type          = "t2.small"
   subnet_id              = aws_default_subnet.default_az1.id
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
-  key_name               = "private-joy"
+  key_name               = "NVKPKP"
   user_data = "${file("jenkins.sh")}"
 
   tags = {
